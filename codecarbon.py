@@ -3,6 +3,7 @@
 from pathlib import Path
 from argparse import ArgumentParser, Namespace, ArgumentDefaultsHelpFormatter
 from importlib.metadata import Distribution
+from codecarbon import track_emissions
 
 from chris_plugin import chris_plugin
 
@@ -31,6 +32,7 @@ parser.add_argument('-V', '--version', action='version',
 
 
 # documentation: https://fnndsc.github.io/chris_plugin/chris_plugin.html#chris_plugin
+
 @chris_plugin(
     parser=parser,
     title='ChRIS Codecarbon Plugin',
@@ -39,6 +41,7 @@ parser.add_argument('-V', '--version', action='version',
     min_cpu_limit='1000m',       # millicores, e.g. "1000m" = 1 CPU core
     min_gpu_limit=0              # set min_gpu_limit=1 to enable GPU
 )
+@track_emissions
 def main(options: Namespace, inputdir: Path, outputdir: Path):
     """
     :param options: non-positional arguments parsed by the parser given to @chris_plugin
