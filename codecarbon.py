@@ -3,6 +3,7 @@
 from pathlib import Path
 from argparse import ArgumentParser, Namespace, ArgumentDefaultsHelpFormatter
 from importlib.metadata import Distribution
+
 from codecarbon import track_emissions
 
 from chris_plugin import chris_plugin
