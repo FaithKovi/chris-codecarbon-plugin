@@ -1,18 +1,18 @@
 from setuptools import setup
 
 setup(
-    name='chris-plugin-template',
+    name='chris-codecarbon-plugin',
     version='1.0.0',
-    description='A ChRIS DS plugin template',
+    description='A ChRIS plugin to measure the amount of carbon emissions using the tool called codecarbon',
     author='FNNDSC',
-    author_email='dev@babyMRI.org',
-    url='https://github.com/FNNDSC/python-chrisapp-template',
-    py_modules=['app'],
+    author_email='faithkovi@gmail.com',
+    url='https://github.com/FaithKovi/chris-codecarbon-plugin',
+    py_modules=['codecarbon'],
     install_requires=['chris_plugin'],
     license='MIT',
     entry_points={
         'console_scripts': [
-            'commandname = app:main'
+            'codecarbon = codecarbon:main'
         ]
     },
     classifiers=[
